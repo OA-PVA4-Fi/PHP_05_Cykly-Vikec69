@@ -19,4 +19,15 @@ $cars = array (
 
 //reseni
 
+$sklad = 0;
+$prodano = 0;
+
+foreach($cars as $car){
+	$sklad += $car[1];
+	$prodano += $car[2];
+}
+
+echo "Celkový počet skladového množství: $sklad <br>";
+echo "Celkový počet prodaného množství: $prodano"
+
 ?>

@@ -76,10 +76,18 @@ $bitcoinPrices = [
 ];
 
 // reseni:
+$averagePrice = array_sum($bitcoinPrices) / count($bitcoinPrices);
+echo "Průměrná cena Bitcoinu: " . number_format($averagePrice, 2);
+$totalBtc = 0;
+$totalInvestment = 0;
 
+foreach ($bitcoinPrices as $month => $price) {
+    $btcPurchased = 50 / $price;
+    $totalBtc += $btcPurchased;
+    $totalInvestment += 50;
+}
 
-
-
+echo "<h3>Vlastněné BTC: " . round($totalBtc, 8) . " BTC</h3>";
 
 /**
  * Spočítejte jaká vliv by měl na KPI, pokud by jste každý měsíc koupili na Low a Hight cenách.
